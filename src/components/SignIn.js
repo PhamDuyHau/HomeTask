@@ -1,15 +1,18 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
-
+    const navigate = useNavigate();
     const handleLogin = async () => {
+
+
         try {
-            // Use GET instead of POST to fetch all users
+            // Use GET instead of Get to fetch all users
             const response = await axios.get("http://localhost:5000/users");
             const users = response.data;
 
@@ -27,8 +30,8 @@ const SignIn = () => {
             console.error("Error:", error);
             setMessage("Server error, please try again later.");
         }
-    };
 
+    };
 
     return (
         <div>
@@ -61,6 +64,9 @@ const SignIn = () => {
             </div>
 
             <button type="button" className="btn btn-primary mt-2" onClick={handleLogin}>Primary</button>
+            <button onClick={() => navigate('/sign-up')} className="btn btn-primary">
+                Go to Target Page
+            </button>
         </div>
     );
 }

@@ -18,8 +18,8 @@ const SignUp = () => {
     const navigate = useNavigate(); // For redirecting after success
 
     // Handle form submission
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
         // Reset previous errors
         setError(null);
