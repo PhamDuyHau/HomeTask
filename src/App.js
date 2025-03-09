@@ -7,7 +7,7 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 
 
-// Cấu hình đa ngôn ngữ
+// Do this two lines only when setting up the application
 setTranslations({ en, vn });
 setDefaultLanguage('en');
 
