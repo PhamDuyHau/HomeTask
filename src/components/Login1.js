@@ -61,7 +61,7 @@ const Login1 = () => {
                 {message}
             </div>
 
-            <button type="button" className="btn btn-primary" onClick={handleLogin}>Primary</button>
+            <button type="button" className="btn btn-primary mt-2" onClick={handleLogin}>Primary</button>
         </div>
     );
 }
