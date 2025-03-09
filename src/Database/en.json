@@ -1,0 +1,20 @@
+{
+  "signup": {
+    "title": "Sign Up",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "button": "Sign Up"
+  },
+  "errors": {
+    "name_required": "Name is required",
+    "email_required": "Email is required",
+    "invalid_email": "Invalid email format",
+    "password_required": "Password is required",
+    "short_password": "Password must be at least 3 characters",
+    "signup_failed": "Error signing up. Please try again."
+  },
+  "messages": {
+    "signup_success": "Sign Up successful!"
+  }
+}

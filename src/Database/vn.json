@@ -1,0 +1,20 @@
+{
+  "signup": {
+    "title": "Đăng ký",
+    "name": "Tên",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "button": "Đăng ký"
+  },
+  "errors": {
+    "name_required": "Tên là bắt buộc",
+    "email_required": "Email là bắt buộc",
+    "invalid_email": "Định dạng email không hợp lệ",
+    "password_required": "Mật khẩu là bắt buộc",
+    "short_password": "Mật khẩu phải có ít nhất 3 ký tự",
+    "signup_failed": "Đã xảy ra lỗi khi đăng ký. Vui lòng thử lại."
+  },
+  "messages": {
+    "signup_success": "Đăng ký thành công!"
+  }
+}

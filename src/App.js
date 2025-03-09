@@ -1,13 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-import Login1 from "./components/Login1";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { setTranslations, setDefaultLanguage, setLanguage } from 'react-multi-lang';
+import en from './Database/en.json';
+import vn from './Database/vn.json';
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+
+
+// Cấu hình đa ngôn ngữ
+setTranslations({ en, vn });
+setDefaultLanguage('en');
 
 function App() {
-  return (
-    <div className="App">
-      <Login1 />
-    </div>
-  );
+    return (
+        <Router>
+            <div className="container">
+                {/* Add language switch button */}
+                <button onClick={() => setLanguage('en')}>English</button>
+                <button onClick={() => setLanguage('vn')}>VietNamese</button>
+
+                <Routes>
+                    <Route path="/sign-up" element={<SignUp />} />
+                    <Route path="/sign-in" element={<SignIn />} />
+                </Routes>
+            </div>
+        </Router>
+    );
 }
 
 export default App;

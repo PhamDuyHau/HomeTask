@@ -2,19 +2,18 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
-const Login1 = () => {
+const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
 
     const handleLogin = async () => {
         try {
-
-            // Gửi request POST lên mock database
+            // Use GET instead of POST to fetch all users
             const response = await axios.get("http://localhost:5000/users");
             const users = response.data;
 
-            // Kiểm tra thông tin đăng nhập
+            // Find a user with matching email and password
             const user = users.find(u => u.email === email && u.password === password);
 
             if (user) {
@@ -22,14 +21,14 @@ const Login1 = () => {
                 alert("Login Success!");
             } else {
                 setMessage("Wrong email or password");
-                alert("Login Fail");
+                alert("Login Failed");
             }
-
-
         } catch (error) {
             console.error("Error:", error);
+            setMessage("Server error, please try again later.");
         }
     };
+
 
     return (
         <div>
@@ -66,5 +65,5 @@ const Login1 = () => {
     );
 }
 
-export default Login1
+export default SignIn
 
