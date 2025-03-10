@@ -5,6 +5,8 @@ import en from './Database/en.json';
 import vn from './Database/vn.json';
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
+import UserProfile from "./components/UserProfile";
+import ErrorPage from "./components/ErrorPage";
 
 
 // Do this two lines only when setting up the application
@@ -22,6 +24,8 @@ function App() {
                 <Routes>
                     <Route path="/sign-up" element={<SignUp />} />
                     <Route path="/sign-in" element={<SignIn />} />
+                    <Route path="/user-profile" element={<UserProfile />} />
+                    <Route path="/error-page" element={<ErrorPage />} />
                 </Routes>
             </div>
         </Router>

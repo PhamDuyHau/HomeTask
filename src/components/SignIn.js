@@ -21,10 +21,16 @@ const SignIn = () => {
 
             if (user) {
                 setMessage(`Welcome, ${user.name}!`);
+
+                // Store user ID in localStorage
+                localStorage.setItem("userId", user.id);
+
                 alert("Login Success!");
+                navigate('/user-profile'); // Redirect to login page
             } else {
                 setMessage("Wrong email or password");
                 alert("Login Failed");
+                navigate('/error-page'); // Redirect to error page
             }
         } catch (error) {
             console.error("Error:", error);
@@ -35,7 +41,7 @@ const SignIn = () => {
 
     return (
         <div>
-
+            {message}
             <div className="row g-2">
                 <div className="col-md-6">
                     <div>
@@ -60,13 +66,15 @@ const SignIn = () => {
                         />
                     </div>
                 </div>
-                {message}
+                <p>
+                    <button type="button" className="btn btn-primary" onClick={handleLogin}>Login</button>
+                    <button onClick={() => navigate('/sign-up')} className="btn btn-primary">
+                        Go to Target Page
+                    </button>
+                </p>
             </div>
 
-            <button type="button" className="btn btn-primary mt-2" onClick={handleLogin}>Primary</button>
-            <button onClick={() => navigate('/sign-up')} className="btn btn-primary">
-                Go to Target Page
-            </button>
+
         </div>
     );
 }
