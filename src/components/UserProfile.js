@@ -14,11 +14,6 @@ const UserProfile = () => {
             try {
                 const userId = localStorage.getItem("userId"); // Retrieve user ID from localStorage
 
-                if (!userId) {
-                    setError("User not logged in");
-                    return;
-                }
-
                 const response = await axios.get(`http://localhost:5000/users/${userId}`);
                 setUser(response.data); // Set user data
             } catch (error) {
@@ -34,7 +29,7 @@ const UserProfile = () => {
 
     return (
         <div>
-            {error}
+\
             <p><strong>ID:</strong> {user.id}</p>
             <p><strong>Name:</strong> {user.name}</p>
             <p><strong>Email:</strong> {user.email}</p>
